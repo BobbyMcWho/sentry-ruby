@@ -3,6 +3,8 @@
 ### Features
 - Allow [tags](https://docs.sentry.io/platforms/ruby/enriching-events/tags/) to be passed via the context hash when reporting errors using ActiveSupport::ErrorReporter and Sentry::Rails::ErrorSubscriber in `sentry-rails` [#1932](https://github.com/getsentry/sentry-ruby/pull/1932)
 
+- Update Sentry::Sidekiq::ErrorHandler to support 3 arity call interface introduced in Sidekiq 7.0. [#1964](https://github.com/getsentry/sentry-ruby/pull/1964)
+
 ## 5.7.0
 
 ### Features

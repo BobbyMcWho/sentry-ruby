@@ -5,7 +5,8 @@ module Sentry
     class ErrorHandler
       WITH_SIDEKIQ_7 = ::Gem::Version.new(::Sidekiq::VERSION) >= ::Gem::Version.new("7.0")
 
-      def call(ex, context)
+      # Sidekiq >= 7.0 error handlers are 3 arity, while versions below are 2 arity
+      def call(ex, context, _sidekiq_config = nil)
         return unless Sentry.initialized?
 
         context_filter = Sentry::Sidekiq::ContextFilter.new(context)
